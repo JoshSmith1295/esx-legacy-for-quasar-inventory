@@ -56,8 +56,8 @@ end, true, {help = _U('command_giveaccountmoney'), validate = true, arguments = 
 	{name = 'amount', help = _U('command_giveaccountmoney_amount'), type = 'number'}
 }})
 
--- QS
-if not Config.OxInventory then
+-- QS (this need to be removed since 1.4.2)
+--[[if not Config.OxInventory then
 	ESX.RegisterCommand('giveweapon', 'admin', function(xPlayer, args, showError)
 		if args.playerId.hasWeapon(args.weapon) then
 			showError(_U('command_giveweapon_hasalready'))
@@ -69,7 +69,7 @@ if not Config.OxInventory then
 		{name = 'weapon', help = _U('command_giveweapon_weapon'), type = 'weapon'}
 		--{name = 'ammo', help = _U('command_giveweapon_ammo'), type = 'number'} This was removed because ammo are now items
 	}})
-end
+end ]]--
 
 ESX.RegisterCommand('clear', 'user', function(xPlayer, args, showError)
 	xPlayer.triggerEvent('chat:clear')
