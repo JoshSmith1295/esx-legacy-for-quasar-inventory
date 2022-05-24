@@ -165,7 +165,7 @@ end
 
 -- QS
 function Core.SavePlayer(xPlayer, cb)
-    MySQL.prepare('UPDATE `users` SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ? WHERE `identifier` = ?', {
+    MySQL.prepare('UPDATE `users` SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ? WHERE `identifier` = ?', {
         json.encode(xPlayer.getAccounts(true)),
         xPlayer.job.name,
         xPlayer.job.grade,
